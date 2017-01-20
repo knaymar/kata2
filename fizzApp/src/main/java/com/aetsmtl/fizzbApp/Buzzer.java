@@ -22,7 +22,13 @@ public class Buzzer {
 		return inputNumber;
 	}
 
-	public void setInputNumber(int inputNumber) {
+	public void setInputNumber(int inputNumber)
+	throws Exception
+	{
+		if (inputNumber < 0)
+		{
+			throw new Exception("You must enter a positive integer");
+		}
 		this.inputNumber = inputNumber;
 	}
 
