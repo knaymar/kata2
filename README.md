@@ -8,6 +8,6 @@ For a given natural number greater than zero return:
 “buzz” if the number is dividable by 5
 “fizzbuzz” if the number is dividable by 15
 the same number if no other requirement is fulfilled
-Modified by Aymard let's test jenkins 2
+Modified by Aymard let's test jenkins 3
 
 ---- Starting using project creation branche ---- 12h16
