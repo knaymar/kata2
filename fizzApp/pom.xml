@@ -13,6 +13,62 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+ 
+  <distributionManagement>
+                <!-- Publish versioned releases here -->
+                <repository>
+                        <id>nexus</id>
+                        <name>My releases</name>
+                        <url>http://192.168.254.136:8081/nexus/content/repositories/releases/</url>
+                </repository>
+
+                <!-- Publish snapshots here -->
+                <snapshotRepository>
+                        <id>nexus</id>
+                        <name>My snapshots</name>
+                        <url>http://192.168.254.136:8081/nexus/content/repositories/snapshots/</url>
+                </snapshotRepository>
+        </distributionManagement>
+
+
+ 
+  <build>
+	<plugins>
+	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+            <archive>
+                <manifest>
+                    <mainClass>com.aetsmtl.fizzbApp.App</mainClass>
+                </manifest>
+            </archive>
+        </configuration>
+       </plugin>
+       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+	   <!-- <plugin>
+	      <artifactId>maven-assembly-plugin</artifactId>
+	      <configuration>
+	        <archive>
+	          <manifest>
+	            <mainClass>com.aetsmtl.java8Learning.App</mainClass>
+	          </manifest>
+	        </archive>
+	        <descriptorRefs>
+	          <descriptorRef>jar-with-dependencies</descriptorRef>
+	        </descriptorRefs>
+	      </configuration>
+	    </plugin>-->
+	</plugins>
+  </build>
 
   <dependencies>
     <dependency>
